@@ -8,9 +8,9 @@ import (
 )
 
 const (
-	Host     = "127.0.0.1"
+	Host     = "mysqldb"
 	User     = "root"
-	Password = "*******"
+	Password = "library1818"
 	DBName   = "library"
 	Port     = "3306"
 )
@@ -18,8 +18,9 @@ const (
 var DB *gorm.DB
 
 func Setup() (*gorm.DB, error) {
-	connectionString := fmt.Sprintf("%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
+	connectionString := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		User,
+		Password,
 		Host,
 		Port,
 		DBName,
